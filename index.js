@@ -28,21 +28,64 @@ const nestedMuppet = {
 // Strings
 
 // 1. Use destructuring to assign appropriate variables based on the sounds animals make.
+let farmAnimalsSounds = farmAnimals.split(" ")
 
+let [moo,neigh,baa,oink,cluck] = farmAnimalsSounds
 // 2. Bolt the horse wandered off, so just give us four animals, and let's name them bessie, dolly, babe, and little.
+let newFarmAnimals = [...farmAnimalsSounds]
 
+for( var i = 0; i < newFarmAnimals.length; i++){ 
+    
+  if ( newFarmAnimals[i] === 'horse') { 
+
+      newFarmAnimals.splice(i, 1); 
+  }
+
+}
+
+let [bessie,dolly,babe,little] = newFarmAnimals
+console.log(newFarmAnimals)
 // 3. Little the chicken had to go back to the coop, so now we're left with three. Let's use color variables of blackAndWhite, black, and pink.
 
 // Arrays
-
+let newFarmAnimals2 = [...newFarmAnimals]
+newFarmAnimals2.pop()
+let [blackAndWhite,black,pink] = newFarmAnimals2
+console.log(newFarmAnimals2)
 // 4. Use destructuring to assign appropriate variables using the color names.
+let [red,orange,yellow,green,blue,indigo,violet] = colors
 
 // 5. Some people have a really hard time picking out indigo, so let's leave that one out, using the first letter of each color as the variable names.
+let newColors = [...colors]
 
+for( var i = 0; i < newColors.length; i++){ 
+    
+  if ( newColors[i] === 'indigo') { 
+
+      newColors.splice(i, 1); 
+  }
+
+}
+let [r,o,y,g,b,v] = newColors
 // 6. But wait! Indigo is now feeling *super* left out. Let's only assign indigo using indg. 
 
 // Objects
 
+let indigoColor = [...colors]
+let indigo2 = indigoColor.splice(5,1)
+let [indg] = indigo2
+console.log(indigo2)
 // 7. Use destructuring to assign all variables using the keys as the variable names
 
+let { muppetName, color, song, job, partner } = muppet;
+
+
 // 8. Use destructuring to assign songs 2 and 4, and Kermit's job and partner
+let song2 = nestedMuppet.album.theMuppetMovie.song2
+let song4 = nestedMuppet.album.theMuppetMovie.song4
+let nestedJob = nestedMuppet.nestedJob
+let nestedPartner = nestedMuppet.nestedPartner
+const myObj = {song2,song4,nestedJob,nestedPartner}
+
+
+console.log(myObj)
